@@ -372,6 +372,8 @@ services:
   db:
     container_name: supabase-db
     image: supabase/postgres:15.6.1.139
+    ports:
+      - "5433:5432"
     healthcheck:
       test: pg_isready -U postgres -h localhost
       interval: 5s
